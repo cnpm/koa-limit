@@ -12,6 +12,7 @@
 
 var limit = require('../');
 var koa = require('koa');
+var mm = require('mm');
 var http = require('http');
 var request = require('supertest');
 var redis = require('redis');
@@ -53,7 +54,7 @@ appWhite.use(hello);
 appWhite = http.createServer(appWhite.callback());
 
 describe('test/limit.test.js', function () {
-
+  afterEach(mm.restore);
   describe('blacklist', function () {
     it('should request blackList 403', function (done) {
       request(appBlack)
@@ -71,6 +72,16 @@ describe('test/limit.test.js', function () {
   });
 
   describe('with redis', function () {
+
+    it('should request 200 but redis record error', function (done) {
+      mm(client, 'hincrby', function *() {
+        throw new Error('mock error');
+      });
+      request(appRedis)
+      .get('/')
+      .expect(200, done);
+    });
+
     it('should request 200', function (done) {
       request(appRedis)
       .get('/')
@@ -81,6 +92,15 @@ describe('test/limit.test.js', function () {
       request(appRedis)
       .get('/')
       .expect(403, done);
+    });
+
+    it('should request 200 if redis get error', function (done) {
+      mm(client, 'hget', function *() {
+        throw new Error('mock error');
+      });
+      request(appRedis)
+      .get('/')
+      .expect(200, done);
     });
 
     it('should request ok after refresh', function (done) {
