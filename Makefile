@@ -1,6 +1,6 @@
 TESTS = test/*.test.js
 REPORTER = tap
-TIMEOUT = 1000
+TIMEOUT = 3000
 MOCHA_OPTS =
 
 install:
@@ -23,6 +23,7 @@ test-cov:
 		-- -u exports \
 		--reporter $(REPORTER) \
 		--timeout $(TIMEOUT) \
+		--require should \
 		$(MOCHA_OPTS) \
 		$(TESTS)
 	@-$(MAKE) check-coverage
