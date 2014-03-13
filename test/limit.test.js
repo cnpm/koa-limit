@@ -57,11 +57,11 @@ appWhite = http.createServer(appWhite.callback());
 describe('test/limit.test.js', function () {
   afterEach(mm.restore);
   describe('blacklist', function () {
-    it('should request blackList 403', function (done) {
+    it('should request blackList 429', function (done) {
       request(appBlack)
       .get('/')
       .expect('access forbidden, please concat foo@bar.com')
-      .expect(403, done);
+      .expect(429, done);
     });
   });
 
@@ -87,14 +87,19 @@ describe('test/limit.test.js', function () {
     it('should request 200', function (done) {
       request(appRedis)
       .get('/')
+      .expect('X-RateLimit-Limit', '1')
+      .expect('X-RateLimit-Remaining', '0')
+      .expect('hello')
       .expect(200, done);
     });
 
-    it('should request 403', function (done) {
+    it('should request 429', function (done) {
       request(appRedis)
       .get('/')
+      .expect('X-RateLimit-Limit', '1')
+      .expect('X-RateLimit-Remaining', '0')
       .expect('request frequency limited')
-      .expect(403, done);
+      .expect(429, done);
     });
 
     it('should request 200 if redis get error', function (done) {
@@ -110,6 +115,8 @@ describe('test/limit.test.js', function () {
       setTimeout(function () {
       request(appRedis)
       .get('/')
+      .expect('X-RateLimit-Limit', '1')
+      .expect('X-RateLimit-Remaining', '0')
       .expect(200, done);
       }, 2000);
     });
