@@ -1,5 +1,11 @@
 
-0.0.3 / 2014-03-13 
+0.0.4 / 2014-03-13
+==================
+
+  * fix test
+  * add http header, change status code to 429
+
+0.0.3 / 2014-03-13
 ==================
 
   * Merge pull request #1 from fengmk2/custom-message

@@ -1,6 +1,6 @@
 {
   "name": "koa-limit",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "koa middleware for limit request by ip with redis or memory",
   "main": "index.js",
   "scripts": {
