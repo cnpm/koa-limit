@@ -40,7 +40,7 @@ appRedis = http.createServer(appRedis.callback());
 
 var appBlack = koa();
 appBlack.use(limit({
-  blackList: ['127.0.0.1'],
+  blackList: ['127.0.0.*'],
   message: 'access forbidden, please concat foo@bar.com'
 }));
 appBlack.use(hello);
@@ -48,7 +48,7 @@ appBlack = http.createServer(appBlack.callback());
 
 var appWhite = koa();
 appWhite.use(limit({
-  whiteList: ['127.0.0.1'],
+  whiteList: ['127.0.*.*'],
   limit: 0
 }));
 appWhite.use(hello);
