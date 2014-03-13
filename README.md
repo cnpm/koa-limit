@@ -46,6 +46,48 @@ app.listen(7001);
 
 checkout the [example.js](https://github.com/dead-horse/koa-limit/blob/master/example.js), see how to use `koa-limit` with redis.
 
+### Different with [koa-ratelimit](https://github.com/koajs/ratelimit)
+
+1. you can use memory to store all these rates.
+2. support `whiteList` and `blackList`
+3. easy to store in other DBs.
+4. message customable
+
+## Authors
+
+```
+$ git summary
+
+ project  : koa-limit
+ repo age : 24 hours ago
+ commits  : 16
+ active   : 2 days
+ files    : 15
+ authors  :
+    15  dead_horse              93.8%
+     1  fengmk2                 6.2%
+```
+
 ## License
 
-MIT
+The MIT License (MIT)
+
+Copyright (c) 2014 dead_horse
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.%

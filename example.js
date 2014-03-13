@@ -12,7 +12,7 @@ app.use(favicon());
 app.use(limit({
   limit: 3,
   interval: 10000
-  // store: client
+  store: client
 }));
 
 app.use(function *() {
