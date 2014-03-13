@@ -11,7 +11,8 @@ var app = koa();
 app.use(favicon());
 app.use(limit({
   limit: 3,
-  store: client
+  interval: 10000
+  // store: client
 }));
 
 app.use(function *() {
