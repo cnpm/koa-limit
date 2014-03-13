@@ -1,4 +1,12 @@
 
+1.0.0 / 2014-03-13
+==================
+
+  * add test for ipchecker
+  * Merge pull request #2 from poying/limit
+  * ipchecker
+  * fix readme
+
 0.0.4 / 2014-03-13
 ==================
 
