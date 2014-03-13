@@ -40,7 +40,8 @@ appRedis = http.createServer(appRedis.callback());
 
 var appBlack = koa();
 appBlack.use(limit({
-  blackList: ['127.0.0.1']
+  blackList: ['127.0.0.1'],
+  message: 'access forbidden, please concat foo@bar.com'
 }));
 appBlack.use(hello);
 appBlack = http.createServer(appBlack.callback());
@@ -59,6 +60,7 @@ describe('test/limit.test.js', function () {
     it('should request blackList 403', function (done) {
       request(appBlack)
       .get('/')
+      .expect('access forbidden, please concat foo@bar.com')
       .expect(403, done);
     });
   });
@@ -91,6 +93,7 @@ describe('test/limit.test.js', function () {
     it('should request 403', function (done) {
       request(appRedis)
       .get('/')
+      .expect('request frequency limited')
       .expect(403, done);
     });
 

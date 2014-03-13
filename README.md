@@ -17,6 +17,8 @@ var favicon = require('koa-favicon');
 var limit = require('./');
 
 var app = koa();
+// If you are using reverse proxy on the front of node, like 'nginx', please set this
+// app.proxy = true;
 app.use(favicon());
 app.use(limit({
   limit: 1000,
@@ -38,6 +40,7 @@ app.listen(7001);
 * **store**: can be set with a redis store, or other store with API in [MemoryStore](https://github.com/dead-horse/koa-limit/blob/master/lib/memory_store.js). default store is `MemoryStore`.
 * **whiteList**: all ips in whiteList won't be limited.
 * **blackList**: all ips in blackList will 403.
+* **message**: forbidden message, defautl is 'request frequency limited'.
 
 ### Redis Store
 
