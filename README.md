@@ -59,13 +59,14 @@ checkout the [example.js](https://github.com/dead-horse/koa-limit/blob/master/ex
 $ git summary
 
  project  : koa-limit
- repo age : 24 hours ago
- commits  : 16
+ repo age : 2 days ago
+ commits  : 21
  active   : 2 days
  files    : 15
  authors  :
-    15  dead_horse              93.8%
-     1  fengmk2                 6.2%
+    19  dead_horse              90.5%
+     1  Po-Ying Chen            4.8%
+     1  fengmk2                 4.8%
 ```
 
 ## License
