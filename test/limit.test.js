@@ -57,11 +57,11 @@ appWhite = http.createServer(appWhite.callback());
 describe('test/limit.test.js', function () {
   afterEach(mm.restore);
   describe('blacklist', function () {
-    it('should request blackList 429', function (done) {
+    it('should request blackList 403', function (done) {
       request(appBlack)
       .get('/')
       .expect('access forbidden, please concat foo@bar.com')
-      .expect(429, done);
+      .expect(403, done);
     });
   });
 
