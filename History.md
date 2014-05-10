@@ -1,5 +1,10 @@
 
-n.n.n / 2014-05-10
+1.0.2 / 2014-05-10
+==================
+
+  * fix retry-after header into second
+
+1.0.1 / 2014-05-10
 ==================
 
   * fix black list status error, fix reset header, fixed #3
