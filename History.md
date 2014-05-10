@@ -1,4 +1,10 @@
 
+n.n.n / 2014-05-10
+==================
+
+  * fix black list status error, fix reset header, fixed #3
+  * update authors
+
 1.0.0 / 2014-03-13
 ==================
 

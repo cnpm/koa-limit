@@ -1,4 +1,4 @@
-koa-limit [![Build Status](https://travis-ci.org/dead-horse/koa-limit.png)](https://travis-ci.org/dead-horse/koa-limit)
+koa-limit [![Build Status](https://travis-ci.org/koajs/koa-limit.png)](https://travis-ci.org/koajs/koa-limit)
 =========
 
 koa middleware for limit request by ip
@@ -37,14 +37,14 @@ app.listen(7001);
 * **limit**: limit request number, default is 1000.
 * **interval**: limit refresh interval in ms, default is one day.
 * **token**: prefix key, for isolate different koa-limit, default is `koa-limit`, if you want to use more than one `koa-limit` in a project, you must set different token!!
-* **store**: can be set with a redis store, or other store with API in [MemoryStore](https://github.com/dead-horse/koa-limit/blob/master/lib/memory_store.js). default store is `MemoryStore`.
+* **store**: can be set with a redis store, or other store with API in [MemoryStore](https://github.com/koajs/koa-limit/blob/master/lib/memory_store.js). default store is `MemoryStore`.
 * **whiteList**: all ips in whiteList won't be limited.
 * **blackList**: all ips in blackList will 403.
 * **message**: forbidden message, defautl is 'request frequency limited'.
 
 ### Redis Store
 
-checkout the [example.js](https://github.com/dead-horse/koa-limit/blob/master/example.js), see how to use `koa-limit` with redis.
+checkout the [example.js](https://github.com/koajs/koa-limit/blob/master/example.js), see how to use `koa-limit` with redis.
 
 ### Different with [koa-ratelimit](https://github.com/koajs/ratelimit)
 
