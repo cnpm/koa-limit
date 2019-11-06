@@ -39,7 +39,7 @@
     "supertest": "0.9.0"
   },
   "dependencies": {
-    "debug": "0.7.4",
+    "debug": "4.1.1",
     "ipchecker": "0.0.2"
   }
 }
